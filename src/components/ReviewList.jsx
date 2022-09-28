@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import Loading from "./Loading";
+import axios from "axios";
 
 const ReviewList = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -8,10 +9,10 @@ const ReviewList = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://northcoders-games-project.herokuapp.com/api/reviews")
-      .then((response) => response.json())
-      .then(({ reviews }) => {
-        setReviews(reviews);
+    axios
+      .get("https://northcoders-games-project.herokuapp.com/api/reviews")
+      .then(({ data }) => {
+        setReviews(data.reviews);
         setIsLoading(false);
       });
   }, []);
@@ -21,16 +22,7 @@ const ReviewList = () => {
       <Loading isLoading={isLoading}>
         <ul className="review-list">
           {reviews.map((review) => {
-            return (
-              <ReviewCard
-                key={review.review_id}
-                title={review.title}
-                category={review.category}
-                body={review.review_body}
-                img={review.review_img_url}
-                votes={review.votes}
-              />
-            );
+            return <ReviewCard key={review.review_id} review={review} />;
           })}
         </ul>
       </Loading>
