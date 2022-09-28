@@ -5,6 +5,23 @@
   font-family: "Roboto", sans-serif;
 }
 
+.nav {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #993441;
+}
+.nav a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+.nav a:hover {
+  background-color: rgb(155, 4, 4);
+}
+
 .review-list {
   padding: 0;
 }
