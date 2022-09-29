@@ -16,6 +16,12 @@ export const fetchReviews = (category) => {
     });
 };
 
+export const fetchReviewById = (review_id) => {
+  return api.get(`/reviews/${review_id}`).then(({ data }) => {
+    return data;
+  });
+};
+
 export const fetchCategories = () => {
   return api.get("/categories").then(({ data }) => {
     return data;
