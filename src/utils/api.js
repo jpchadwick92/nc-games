@@ -27,3 +27,13 @@ export const fetchCategories = () => {
     return data;
   });
 };
+
+export const incrementVotes = (review_id) => {
+  return api
+    .patch(`/reviews/${review_id}`, {
+      inc_votes: 1,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};

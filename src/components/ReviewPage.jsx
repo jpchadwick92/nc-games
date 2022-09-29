@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviewById } from "../utils/api";
 import Loading from "./Loading";
+import Vote from "./Vote";
 
 const ReviewPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +15,6 @@ const ReviewPage = () => {
       setIsLoading(false);
     });
   }, [review_id]);
-
   return (
     <section className="review__page">
       <Loading isLoading={isLoading}>
@@ -24,7 +24,7 @@ const ReviewPage = () => {
         <h3>Category: {review.category}</h3>
         <p>{review.review_body}</p>
         <p>
-          &#10084;&#65039; {review.votes} &emsp;{" "}
+          <Vote review={review} />
           <i className="far fa-comment-dots"></i>
           {review.comment_count}
         </p>
