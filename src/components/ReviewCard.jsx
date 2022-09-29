@@ -10,7 +10,7 @@ const ReviewCard = ({ review }) => {
       </Link>
       <h3>Category: {category[0].toUpperCase() + category.substring(1)}</h3>
       <p>{review_body}</p>
-      <p>&#10084;&#65039; {votes} &emsp;</p>
+      <p>&#10084;&#65039; {votes}</p>
     </li>
   );
 };

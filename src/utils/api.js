@@ -37,3 +37,8 @@ export const incrementVotes = (review_id) => {
       return data;
     });
 };
+export const fetchComments = (review_id) => {
+  return api.get(`/reviews/${review_id}/comments`).then(({ data }) => {
+    return data;
+  });
+};

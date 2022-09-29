@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviewById } from "../utils/api";
+import { fetchComments } from "../utils/api";
+import CommentList from "./CommentList";
 import Loading from "./Loading";
 import Vote from "./Vote";
 
@@ -8,6 +10,8 @@ const ReviewPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [review, setReview] = useState({});
   const { review_id } = useParams();
+  const [comments, setComments] = useState([]);
+
   useEffect(() => {
     setIsLoading(true);
     fetchReviewById(review_id).then(({ review }) => {
@@ -15,6 +19,13 @@ const ReviewPage = () => {
       setIsLoading(false);
     });
   }, [review_id]);
+
+  useEffect(() => {
+    fetchComments(review_id).then(({ comments }) => {
+      setComments(comments);
+    });
+  });
+
   return (
     <section className="review__page">
       <Loading isLoading={isLoading}>
@@ -28,6 +39,7 @@ const ReviewPage = () => {
           <i className="far fa-comment-dots"></i>
           {review.comment_count}
         </p>
+        <CommentList className="comments" comments={comments} />
       </Loading>
     </section>
   );
