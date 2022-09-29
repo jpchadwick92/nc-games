@@ -72,3 +72,28 @@
 .card a:hover {
   color: rgb(155, 4, 4);
 }
+
+.vote {
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #993441;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 6px #999;
+  margin-right: 5%;
+}
+
+.vote:before {
+  content: attr(votes);
+  display: inline-block;
+  padding: 10px;
+}
+
+.vote:active {
+  background-color: #993441;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
