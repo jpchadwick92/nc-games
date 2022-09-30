@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviewById } from "../utils/api";
 import { fetchComments } from "../utils/api";
+import CommentAdder from "./CommentAdder";
 import CommentList from "./CommentList";
 import Loading from "./Loading";
 import Vote from "./Vote";
@@ -36,6 +37,7 @@ const ReviewPage = () => {
           <i className="far fa-comment-dots"></i>
           {review.comment_count}
         </p>
+        <CommentAdder review_id={review_id} setComments={setComments} />;
         <CommentList className="comments" comments={comments} />
       </Loading>
     </section>
