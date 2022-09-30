@@ -18,13 +18,10 @@ const ReviewPage = () => {
       setReview(review);
       setIsLoading(false);
     });
-  }, [review_id]);
-
-  useEffect(() => {
     fetchComments(review_id).then(({ comments }) => {
       setComments(comments);
     });
-  });
+  }, [review_id]);
 
   return (
     <section className="review__page">
