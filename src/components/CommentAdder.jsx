@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { postNewComment } from "../utils/api";
+import { UserContext } from "../contexts/User";
+import { useContext } from "react";
 
 const CommentAdder = ({ review_id, setComments }) => {
+  const { user } = useContext(UserContext);
   const [newComment, setNewComment] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postNewComment(review_id, "cooljmessy", newComment).then(({ comment }) => {
+    postNewComment(review_id, user.username, newComment).then(({ comment }) => {
       setComments((currComments) => {
         return [comment, ...currComments];
       });

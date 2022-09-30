@@ -37,7 +37,7 @@ const ReviewPage = () => {
           <i className="far fa-comment-dots"></i>
           {review.comment_count}
         </p>
-        <CommentAdder review_id={review_id} setComments={setComments} />;
+        <CommentAdder review_id={review_id} setComments={setComments} />
         <CommentList className="comments" comments={comments} />
       </Loading>
     </section>
