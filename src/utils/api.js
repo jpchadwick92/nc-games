@@ -42,3 +42,13 @@ export const fetchComments = (review_id) => {
     return data;
   });
 };
+export const postNewComment = (review_id, username, newComment) => {
+  return api
+    .post(`/reviews/${review_id}/comments`, {
+      username,
+      body: newComment,
+    })
+    .then(({ data }) => {
+      return data;
+    });
+};

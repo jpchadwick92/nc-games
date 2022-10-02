@@ -108,3 +108,36 @@
 .comment__list {
   padding: 0;
 }
+
+.comment__adder button {
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #993441;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px #999;
+  padding: 5px 10px;
+  float: right;
+}
+.comment__adder textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-style: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font: inherit;
+}
+
+.comment__adder button:active {
+  background-color: #993441;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.user img {
+  width: 50px;
+}
