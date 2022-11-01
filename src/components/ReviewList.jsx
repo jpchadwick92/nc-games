@@ -9,19 +9,25 @@ const ReviewList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [sortBy, setSortBy] = useState("created_at");
+  const [orderBy, setOrderBy] = useState("DESC");
   const { category } = useParams();
   useEffect(() => {
     setIsLoading(true);
-    fetchReviews(category, sortBy).then(({ reviews }) => {
+    fetchReviews(category, sortBy, orderBy).then(({ reviews }) => {
       setReviews(reviews);
       setIsLoading(false);
     });
-  }, [category, sortBy]);
+  }, [category, sortBy, orderBy]);
 
   return (
     <section>
       <Loading isLoading={isLoading}>
-        <SortReviews sortBy={sortBy} setSortBy={setSortBy} />
+        <SortReviews
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+          orderBy={orderBy}
+          setOrderBy={setOrderBy}
+        />
         <ul className="review__list">
           {reviews.map((review) => {
             return <ReviewCard key={review.review_id} review={review} />;

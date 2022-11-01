@@ -4,12 +4,13 @@ const api = axios.create({
   baseURL: "https://northcoders-games-project.herokuapp.com/api",
 });
 
-export const fetchReviews = (category, sort_by) => {
+export const fetchReviews = (category, sort_by, order) => {
   return api
     .get("/reviews", {
       params: {
         category,
         sort_by,
+        order,
       },
     })
     .then(({ data }) => {
