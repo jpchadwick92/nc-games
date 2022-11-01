@@ -22,6 +22,14 @@
   background-color: rgb(155, 4, 4);
 }
 
+.sort__by {
+  margin-top: 15px;
+  display: inline-block;
+}
+.sort__by select {
+  justify-content: space-evenly;
+  margin-right: 5px;
+}
 .review__list {
   padding: 0;
 }
@@ -71,6 +79,11 @@
 
 .card a:hover {
   color: rgb(155, 4, 4);
+}
+
+.card i {
+  font-size: 20px;
+  margin-right: 5px;
 }
 
 .vote {
