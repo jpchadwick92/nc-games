@@ -6,6 +6,8 @@ import CommentAdder from "./CommentAdder";
 import CommentList from "./CommentList";
 import Loading from "./Loading";
 import Vote from "./Vote";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { regular } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const ReviewPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,7 +36,11 @@ const ReviewPage = () => {
         <p>{review.review_body}</p>
         <p>
           <Vote review={review} />
-          <i className="far fa-comment-dots"></i>
+          <FontAwesomeIcon
+            icon={regular("comment-dots")}
+            className="comment__icon"
+          />
+          {"   "}
           {review.comment_count}
         </p>
         <CommentAdder review_id={review_id} setComments={setComments} />

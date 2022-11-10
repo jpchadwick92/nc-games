@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+
 const CommentList = ({ comments }) => {
   return (
     <section>
@@ -12,7 +15,10 @@ const CommentList = ({ comments }) => {
                 on {date.toLocaleDateString()}
               </h4>
               <p>{comment.body}</p>
-              <p>&#10084;&#65039; {comment.votes} </p>
+              <p>
+                <FontAwesomeIcon icon={solid("heart")} color="red" />{" "}
+                {comment.votes}{" "}
+              </p>
             </li>
           );
         })}
