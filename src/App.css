@@ -81,11 +81,6 @@
   color: rgb(155, 4, 4);
 }
 
-.card i {
-  font-size: 20px;
-  margin-right: 5px;
-}
-
 .vote {
   font-size: 15px;
   text-align: center;
@@ -96,7 +91,7 @@
   border: none;
   border-radius: 30px;
   box-shadow: 0 6px #999;
-  margin-right: 5%;
+  margin-right: 1.2em;
 }
 
 .vote:before {
@@ -149,6 +144,10 @@
   background-color: #993441;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.comment__icon {
+  font-size: larger;
 }
 
 .user img {

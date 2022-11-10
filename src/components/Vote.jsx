@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { incrementVotes } from "../utils/api";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const Vote = ({ review }) => {
   const [votes, setVotes] = useState(review.votes);
@@ -23,7 +25,7 @@ const Vote = ({ review }) => {
         voteOnReview(review.review_id);
       }}
     >
-      &#10084;&#65039;
+      <FontAwesomeIcon icon={solid("heart")} color="red" />
     </button>
   );
 };

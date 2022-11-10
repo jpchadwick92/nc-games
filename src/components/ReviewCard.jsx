@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid, regular } from "@fortawesome/fontawesome-svg-core/import.macro";
+
 const ReviewCard = ({ review }) => {
   const {
     review_id,
@@ -18,8 +21,12 @@ const ReviewCard = ({ review }) => {
       <h3>Category: {category[0].toUpperCase() + category.substring(1)}</h3>
       <p>{review_body}</p>
       <p>
-        &#10084;&#65039; {votes} {"   "}
-        <i className="far fa-comment-dots"> </i>
+        <FontAwesomeIcon icon={solid("heart")} color="red" /> {votes} {"   "}
+        <FontAwesomeIcon
+          icon={regular("comment-dots")}
+          className="comment__icon"
+        />
+        {"   "}
         {review.comment_count}
       </p>
       <p>{new Date(created_at).toLocaleDateString()}</p>
