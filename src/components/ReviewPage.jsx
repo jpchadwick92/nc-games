@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchReviewById } from "../utils/api";
-import { fetchComments } from "../utils/api";
+import { fetchReviewById, fetchComments } from "../utils/api";
 import CommentAdder from "./CommentAdder";
 import CommentList from "./CommentList";
 import Loading from "./Loading";
