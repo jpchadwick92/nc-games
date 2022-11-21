@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { postNewComment } from "../utils/api";
 import { UserContext } from "../contexts/User";
-import { useContext } from "react";
 import Loading from "./Loading";
 
 const CommentAdder = ({ review_id, setComments }) => {

@@ -54,3 +54,7 @@ export const postNewComment = (review_id, username, newComment) => {
       return data;
     });
 };
+
+export const removeComment = (comment_id) => {
+  return api.delete(`/comments/${comment_id}`);
+};
