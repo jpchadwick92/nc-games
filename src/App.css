@@ -150,6 +150,21 @@
   font-size: larger;
 }
 
+.delete__button {
+  float: right;
+  background-color: white;
+  border: solid grey 2px;
+  border-radius: 15px;
+  padding: 6px;
+}
+
+.delete__button :hover {
+  color: #666;
+}
+
+.delete__button :active {
+  color: black;
+}
 .user img {
   width: 50px;
 }

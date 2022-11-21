@@ -32,8 +32,10 @@ const CommentCard = ({ comment }) => {
         <p>{comment.body}</p>
         <p>
           <FontAwesomeIcon icon={solid("heart")} color="red" /> {comment.votes}{" "}
+          <button className="delete__button" onClick={handleOnClick}>
+            <FontAwesomeIcon icon={solid("trash")} />
+          </button>
         </p>
-        <button onClick={handleOnClick}>Delete</button>
       </li>
     </Loading>
   ) : (
