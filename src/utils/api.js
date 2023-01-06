@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://northcoders-games-project.herokuapp.com/api",
+  baseURL: "https://nc-backend-project.cyclic.app/api",
 });
 
 export const fetchReviews = (category, sort_by, order) => {
