@@ -26,7 +26,13 @@ Then
 cd nc-games
 ```
 
-To view the app locally use the command
+Ensure all dependencies are installed by running 
+
+```
+npm install
+```
+
+Then to view the app locally use the command
 
 ```
 npm start
